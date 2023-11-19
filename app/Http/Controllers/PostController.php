@@ -93,7 +93,24 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $post = Post::findOrFail($id);
-        return $request;
+        // $post->column_name => in database
+        // $request->input_name => in form
+
+        /*
+        /////////////////////////   This is first way to update data inside database    ////////////////////
+        $post->title = $request->my_title;
+        $post->body = $request->my_body;
+        $post->save();
+        */
+
+
+        /////////////////////////   This is second way to update data inside database    ////////////////////
+
+        $post->update([
+            "title" => $request->my_title,
+            "body" => $request->my_body
+        ]);
+        return redirect()->route("posts");
     }
 
     /**
@@ -104,6 +121,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+
     }
 }
