@@ -21,6 +21,6 @@ Route::get('/', function () {
 Route::controller(PostController::class)->group(function() {
     Route::get("posts", "index")->name("posts");
     Route::get("posts/create", "create")->name("posts.create");
-    Route::post("posts/login", "store")->name("posts.store");
+    Route::post("posts/store", "store")->name("posts.store");
 });
 // Route::resource("posts", PostController::class);
