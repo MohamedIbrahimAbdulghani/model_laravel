@@ -24,5 +24,6 @@ Route::controller(PostController::class)->group(function() {
     Route::post("posts/store", "store")->name("posts.store");
     Route::get("posts/edit/{id}", "edit")->name("posts.edit");
     Route::post("posts/update/{id}", "update")->name("posts.update");
+    Route::get("posts/delete/{id}", "delete")->name("posts.delete");
 });
 // Route::resource("posts", PostController::class);

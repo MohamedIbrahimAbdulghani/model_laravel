@@ -17,6 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string("title", 50);
             $table->text("body");
+
+
+            $table->softDeletes();
+
+
+
             $table->timestamps();
         });
     }

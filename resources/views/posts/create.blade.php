@@ -21,10 +21,10 @@
 <div class="container">
 
 <form action="{{route('posts.store')}}" method="POST" class="form">
-    @csrf
+@csrf
     <input type="text" name="my_title" placeholder="Enter Title" class="form-control mb-3">
     <input type="text" name="my_body" placeholder="Enter Body" class="form-control mb-3">
-    <input type="submit" value="Login" class="btn btn-primary mb-3 d-block m-auto">
+    <input type="submit" value="Add" class="btn btn-primary mb-3 d-block m-auto">
 </form>
 
 <a href="{{route('posts')}}" class="d-block text-center">Show All Posts</a>

@@ -119,8 +119,16 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function delete(Post $post, $id)
     {
+                /////////////////////////   This is first way to delete data from database    ///////////////////
 
+
+        // Post::findOrFail($id)->delete();
+
+                /////////////////////////   This is second way to delete data from database    ///////////////////
+        Post::destroy($id);
+
+        return redirect()->route("posts");
     }
 }
